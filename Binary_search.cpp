@@ -3,6 +3,7 @@ using namespace std;
 // Binary search 
 // elements should be pressent in sorted order 
 // we compare the mid element of the array. if the array element is > key then we search the 1st half. And if the element < key -> 2nd half. And repeat the process.
+// complexity = O(log n (base 2))
 int Bsearch(int arr[],int n, int key)
 {
     int s=0,e=n;
