@@ -28,3 +28,31 @@ int fact(int n)
 // executing fionacci sequence 
 // in this we repeatedly call the function fibonacci itself which in turn again due to its definition calls itself and this goes on until it hits the base conditions i.e 0 and 1 and this is called recursion
 int fibo(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    if(n==1)
+    {
+        return 1;
+    }
+    
+    // this return statement for an trial input 4 breaks it down to 
+    //  3 2
+    // breaks 3 down to
+    // 2 1
+    // breaks to down to
+    // 1 0
+    // then the base conditions hit and the all the statements up until 3 are return similar all of this happens with 2 and all other broken down conditions in recursion
+    return fibo(n-1)+fibo(n-2);
+}
+
+int main()
+{
+    // int x =sum(100);
+    // cout<<x<<endl;
+    // cout<<fact(4);
+    cout<<fibo(5)<<endl;
+    return 0;
+}
