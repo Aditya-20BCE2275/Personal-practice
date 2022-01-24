@@ -3,15 +3,14 @@ using namespace std;
 
 bool issafe(int **arr, int x, int y, int n)
 {
-    // if(x>=n && y>=n){
-    //     return true;
-    // }
+    // checking column of every row in line with queen
     for (int row = 0; row < x; row++)
     {
         if (arr[row][y] == 1)
             return false;
     }
 
+    // checking the left diagonal
     int r = x, c = y;
     while (r >= 0 && c >= 0)
     {
@@ -23,6 +22,7 @@ bool issafe(int **arr, int x, int y, int n)
         c--;
     }
 
+    // checking the right diagonal
     r = x;
     c = y;
     while (r >= 0 && c >= 0)
@@ -37,6 +37,7 @@ bool issafe(int **arr, int x, int y, int n)
     return true;
 }
 
+// Main func to run the nqueens prob through recursion
 bool nqueen(int **arr, int x, int n)
 {
     if (x >= n)
@@ -58,6 +59,7 @@ bool nqueen(int **arr, int x, int n)
     }
     return false;
 }
+
 int main()
 {
     int n;
@@ -71,6 +73,7 @@ int main()
             arr[i][j] = 0;
         }
     }
+    
     if (nqueen(arr, 0, n))
     {
         for (int i = 0; i < n; i++)
