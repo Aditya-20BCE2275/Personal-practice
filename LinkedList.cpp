@@ -65,6 +65,7 @@ bool search(node *head, int key)
     return false;
 }
 
+// Deletion works as we point the previous node of the node which we wish to delete to the next node of node to be deleted thus getting the node to be deleted out of the list and deleting it by assigning it dynamically to a todelete variable
 void deleteathead(node *&head)
 {
     node *todelete = head;
