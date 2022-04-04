@@ -1,7 +1,6 @@
 {
     "files.associations": {
-        "Sample6.C": "cpp",
-        "vector": "cpp"
+        "Sample6.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
