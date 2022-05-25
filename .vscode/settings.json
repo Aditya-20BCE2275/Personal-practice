@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "Sample6.C": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

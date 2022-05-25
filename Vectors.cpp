@@ -1,6 +1,6 @@
 // Vectors are also called dynamic arrays
 #include <iostream>
-#include<algorithm>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
@@ -19,7 +19,7 @@ int main()
         v.push_back(e);
     }
 
-    //printing the vector
+    // printing the vector
     for (int i = 0; i < n; i++)
     {
         cout << v[i] << " ";
@@ -32,7 +32,11 @@ int main()
     {
         // here we dereffernce it as it's a pointer
         cout << *it << " ";
-    }
+    } cout<<endl;
+
+    // This method deletes the specific element position in the vector through the iterator method
+
+    v.erase(v.begin()+2);
 
     // Traversing a vector using auto
     for (auto element : v)
@@ -44,10 +48,10 @@ int main()
     v.pop_back();
 
     // we can also pre intialise a vector with a particular int and frequency
-    vector<int> v2(3, 50); //50 50 50
+    vector<int> v2(3, 50); // 50 50 50
 
     // this function swaps the value of v and v2
     swap(v, v2);
     // sorting the vector is similar as sorting an array
-    sort(v.begin(),v.end());
+    sort(v.begin(), v.end());
 }
