@@ -50,10 +50,12 @@ public:
         if (follow->data > val)
         {
             follow->left = n;
+            cout << "node added" << endl;
         }
         else
         {
             follow->right = n;
+            cout << "node added" << endl;
         }
     }
 
@@ -137,7 +139,7 @@ public:
 
             else if (temp->left == NULL || temp->right == NULL)
             {
-                cout<<"Deleting Nodes with a single child node"<<endl;
+                cout << "Deleting Nodes with a single child node" << endl;
                 if (temp->left != NULL && data < follow->data)
                 {
                     follow->left = temp->left;
@@ -160,25 +162,26 @@ public:
             else
             {
                 // replace the maximum node in the left subtree or minimum in the right subtree with the node to be deleted.
-                cout<<"Deleting a node with 2 children"<<endl;
-                node* change = temp;
+                cout << "Deleting a node with 2 children" << endl;
+                node *change = temp;
                 change = change->right;
-                while(change->left!=NULL)
+                while (change->left != NULL)
                 {
                     change = change->left;
                 }
                 follow->right = change;
                 change->left = temp->left;
-                if(temp->right!=change)
+                if (temp->right != change)
                 {
                     change->right = temp->right;
                     change->left = temp->left;
                     follow->right = change;
                     free(temp);
                 }
-                else{
+                else
+                {
                     change->left = temp->left;
-                    follow->right= change;
+                    follow->right = change;
                     free(temp);
                 }
             }
