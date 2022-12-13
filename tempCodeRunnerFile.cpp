@@ -1,6 +1,5 @@
- (pos == cnt + 1)
-        // {
-        //     temp->next = temp->next->next;
-        //     todel = temp->next;
-        //     break;
-        // }
+
+// 1 1 1 1 1
+// 0 1 0 1 0
+// 1 0 0 1 1
+// 1 1 0 1 1
