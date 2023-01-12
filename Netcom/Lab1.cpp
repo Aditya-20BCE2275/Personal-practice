@@ -27,17 +27,17 @@ int main()
     {
         cout << x;
     }
-    cout<<endl;
-    cout<<"This is the receiver sides string"<<endl;
-    for(int i=1;i<v.size()-1;i++)
+    cout << endl;
+    cout << "This is the receiver sides string" << endl;
+    for (int i = 1; i < v.size() - 1; i++)
     {
-        if(v[i] == '*')
+        if (v[i] == '*')
         {
             i++;
-            cout<<v[i];
+            cout << v[i];
             continue;
         }
-        cout<<v[i];
+        cout << v[i];
     }
     return 0;
 }

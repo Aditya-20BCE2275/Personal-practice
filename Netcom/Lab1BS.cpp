@@ -14,6 +14,7 @@ int main()
     {
         if (s[i] == '0')
         {
+            cnt1=0;
             cnt0++;
             string temp = "";
             temp += s[i];
@@ -37,19 +38,19 @@ int main()
     cout << "Senders Side Stuffing" << endl;
     for (auto x : v)
     {
-        cout << x;
+        cout << x << " ";
     }
     cout << endl;
-    // cout << "This is the receiver sides string" << endl;
-    // for (int i = 1; i < v.size() - 1; i++)
-    // {
-    //     if (v[i] == '*')
-    //     {
-    //         i++;
-    //         cout << v[i];
-    //         continue;
-    //     }
-    //     cout << v[i];
-    // }
+    cout << "This is the receiver sides string" << endl;
+    for (int i = 1; i < v.size() - 1; i++)
+    {
+        // if (v[i] == "01111110")
+        // {
+        //     i++;
+        //     cout << v[i];
+        //     continue;
+        // }
+        cout << v[i];
+    }
     return 0;
 }

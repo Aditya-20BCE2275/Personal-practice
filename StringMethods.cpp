@@ -69,5 +69,7 @@ int main()
     string so = "asfubeojfoeadbabug";
     sort(so.begin(),so.end());
     cout<<so<<endl;
+    int ok = stoi(numeric)+stoi(numeric);
+    cout<<ok;
     return 0;
 }
