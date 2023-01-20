@@ -68,7 +68,7 @@ int main()
     Display(7, adj);
     vector<int> v1;
     v1 = bfs(adj, v);
-    vector<int> :: iterator it;
+    vector<int>::iterator it;
     for (it = v1.begin(); it != v1.end(); it++)
     {
         cout << *it << " ";
