@@ -4,6 +4,11 @@ using namespace std;
 // find the number contigous or non contiguos subseqence with sum = k
 int sumK(int idx, int arr[], int n, int sum, int k)
 {
+    // if array contains +ves only 
+    if(sum > k)
+    {
+        return 0;
+    }
     if (n == idx)
     {
         if (sum == k)
@@ -17,11 +22,11 @@ int sumK(int idx, int arr[], int n, int sum, int k)
     }
 
     // not pick
-    int l = sumK(idx + 1, arr, n, sum, k);
+    int r = sumK(idx + 1, arr, n, sum, k);
 
     // take
     sum += arr[idx];
-    int r = sumK(idx + 1, arr, n, sum, k);
+    int l = sumK(idx + 1, arr, n, sum, k);
     sum -= arr[idx];
     return l + r;
 }
