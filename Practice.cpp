@@ -1,117 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class node
+bool sumK(int idx, int arr[], vector<int> &ans, int n, int sum, int k)
 {
-public:
-    int data;
-    node *next;
-    node(int val)
+    if (n == idx)
     {
-        data = val;
-        next = nullptr;
-    }
-};
-
-void insertattail(int data, node *&head)
-{
-    node *n = new node(data);
-    if (head == nullptr)
-    {
-        head = n;
-        cout << "new node is inserted at the head coz it was empty lol" << endl;
-        return;
-    }
-    node *temp = head;
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    temp->next = n;
-    cout << "A new node is inserted at the tail" << endl;
-}
-
-void deletenode(node *&head, int val)
-{
-    if (val == head->data)
-    {
-        node *todel = head;
-        head = head->next;
-        delete todel;
-        cout << "the head node deleted" << endl;
-        return;
-    }
-    node *temp = head;
-    while (temp->next->data != val)
-    {
-        temp = temp->next;
-    }
-    node *todel = temp->next;
-    temp->next = temp->next->next;
-    delete todel;
-    cout << "node deleted" << endl;
-}
-
-void display(node *head)
-{
-    cout << endl;
-    node *temp = head;
-    while (temp != nullptr)
-    {
-        cout << temp->data << "->";
-        temp = temp->next;
-    }
-    cout << "NULL" << endl;
-}
-
-node *oddEvenList(node *head)
-{
-    queue<node *> q;
-    node *s = head;
-    while (s->next->next != NULL && s->next != NULL)
-    {
-        cout << "entered while" << endl;
-        if (s->next)
+        if (sum == k)
         {
-            q.push(s->next);
+            for (auto x : ans)
+            {
+                cout << x << " ";
+            }
+            cout << endl;
+            return true;
         }
-        s->next = s->next->next;
-        if (s->next != NULL)
-        {
-            s = s->next;
-        }
+        else
+        return false;
     }
-    cout << "while ended";
-    // s.next = NULL;
-    while (!q.empty())
+
+    // not pick
+    if (sumK(idx + 1, arr, ans, n, sum, k) == true)
     {
-        s->next = q.front();
-        s = s->next;
-        q.pop();
+        return true;
     }
-    s->next = NULL;
-    return head;
-    // delete q;
+
+    // pick
+    ans.push_back(arr[idx]);
+    sum += arr[idx];
+    if (sumK(idx + 1, arr, ans, n, sum, k) == true)
+    {
+        return true;
+    }
+    // remove after
+    ans.pop_back();
+    sum -= arr[idx];
+    return false;
 }
 
 int main()
 {
-    node *head = nullptr;
-    // insertattail(1, head);
-    // insertattail(2, head);
-    // insertattail(3, head);
-    // insertattail(4, head);
-    // insertattail(5, head);
-    // display(head);
-    // deletenode(head, 4);
-    // display(head);
-    insertattail(1, head);
-    insertattail(2, head);
-    insertattail(3, head);
-    insertattail(4, head);
-    insertattail(5, head);
-    display(head);
-    node *temp = oddEvenList(head);
-    display(temp);
+    int arr[] = {1, 2, 1};
+    int n = 3;
+    int k = 2;
+    vector<int> ans;
+    int sum = 0;
+    sumK(0, arr, ans, n, sum, k);
     return 0;
 }

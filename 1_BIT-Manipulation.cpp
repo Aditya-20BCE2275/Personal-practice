@@ -47,9 +47,10 @@ int updatebit(int n,int pos,int value)
 }
 int main()
 {
-    // cout<<getbit(5,2)<<endl;
-    // cout<<setbit(5,1)<<endl;
-    // cout<<clearbit(5,2)<<endl;
+    cout<<getbit(5,2)<<endl;
+    cout<<setbit(5,1)<<endl;
+    cout<<clearbit(5,2)<<endl;
     cout<<updatebit(5,1,1);
     return 0;
+    // INT32_MAX
 }
