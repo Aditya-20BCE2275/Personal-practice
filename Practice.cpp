@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// find a single contigous or non contiguos subseqence with sum = k 
 bool sumK(int idx, int arr[], vector<int> &ans, int n, int sum, int k)
 {
     if (n == idx)
