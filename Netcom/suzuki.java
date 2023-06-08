@@ -26,7 +26,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class suzuki_kasami {
+public class suzuki {
 
     public static void exitCS(site localsite, int thissiteNumber, int number_of_nodes, String[] ip_addr, int[] port,
             int no_of_sites) {

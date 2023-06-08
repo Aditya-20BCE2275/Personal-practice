@@ -10,7 +10,7 @@ void merge(int arr[], int l, int mid, int r)
     int n1 = mid - l + 1;
     int n2 = r - mid;
     int a[n1];
-    int b[n2]; //temp arrays
+    int b[n2]; // temp arrays
     for (int i = 0; i < n1; i++)
     {
         a[i] = arr[l + i];
@@ -66,7 +66,7 @@ void mergesort(int arr[], int l, int r)
 
 int main()
 {
-    int arr[] = {12,44,2,6,1};
+    int arr[] = {12, 44, 2, 6, 1};
     mergesort(arr, 0, 4);
     for (int i = 0; i < 5; i++)
     {
